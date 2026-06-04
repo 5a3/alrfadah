@@ -34,23 +34,26 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
 
 /* --- شريط التنقل العلوي (Navbar) --- */
 .navbar { background-color: var(--nav-bg); backdrop-filter: blur(12px); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 999; border-bottom: 3px solid var(--primary-color); transition: var(--transition); }
-.nav-container { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; width: 100%; }
 .logo-area { display: flex; align-items: center; gap: 12px; }
 .nav-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color); }
 .logo-text h1 { font-size: 1.1rem; color: var(--primary-color); font-weight: 700; }
 .logo-text p { font-size: 0.78rem; color: var(--text-muted); }
-.nav-links { display: flex; gap: 22px; list-style: none; }
+
+/* تم تعديل هذا الجزء ليبقى مرناً وظاهراً بشكل دائم في الاتجاهين للشاشات الكبيرة */
+.nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 600; font-size: 0.92rem; transition: var(--transition); position: relative; padding: 6px 0; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
 .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: var(--transition); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 .btn-action { background: var(--surface-color); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 30px; cursor: pointer; color: var(--text-color); font-size: 0.88rem; display: flex; align-items: center; gap: 6px; transition: var(--transition); }
 .btn-action:hover { background-color: var(--primary-color); color: #ffffff; border-color: var(--primary-color); }
 .menu-toggle-btn { display: none; background: none; border: none; font-size: 1.35rem; color: var(--text-color); cursor: pointer; padding: 5px; }
 
 /* --- Mobile Drawer --- */
-.mobile-drawer { position: fixed; top: 0; bottom: 0; right: -280px; width: 280px; background-color: var(--surface-color); box-shadow: -5px 0 20px rgba(0,0,0,0.08); z-index: 1001; display: flex; flex-direction: column; padding: 25px; transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.mobile-drawer { position: fixed; top: 0; bottom: 0; right: -280px; width: 280px; background-color: var(--surface-color); box-shadow: -5px 0 20px rgba(0,0,0,0.08); z-index: 1001; display: flex; flex-direction: column; padding: 25px; transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
 html[lang="en"] .mobile-drawer { right: auto; left: -280px; box-shadow: 5px 0 20px rgba(0,0,0,0.08); }
 .mobile-drawer.open { right: 0; }
 html[lang="en"] .mobile-drawer.open { left: 0; right: auto; }
@@ -84,7 +87,7 @@ section { padding: 85px 0; }
 .card h3 { margin-bottom: 14px; font-size: 1.25rem; font-weight: 700; }
 .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* --- 📊 قسم الازدحام الذكي (خرائط جوجل) --- */
+/* --- 📊 قسم الازدحام الذكي --- */
 .days-selector-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 30px; flex-wrap: wrap; }
 .day-tab { background-color: var(--bg-color); border: 1px solid var(--border-color); padding: 9px 18px; border-radius: 25px; font-family: var(--font-family); color: var(--text-color); font-weight: 600; cursor: pointer; font-size: 0.88rem; transition: var(--transition); }
 .day-tab:hover, .day-tab.active { background-color: var(--google-blue); color: #ffffff; border-color: var(--google-blue); }
@@ -104,7 +107,7 @@ section { padding: 85px 0; }
 .hour-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
 .traffic-footer-status { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 15px; }
 
-/* --- نظام الأكورديون للفروع ومجموعات الخرائط الفرعية --- */
+/* --- نظام الأكورديون للفروع --- */
 .branches-wrapper { max-width: 850px; margin: 0 auto; }
 .accordion-item { background-color: var(--surface-color); border: 1px solid var(--border-color); margin-bottom: 16px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
 .accordion-header { padding: 20px 25px; font-weight: 700; font-size: 1.05rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
@@ -112,7 +115,7 @@ section { padding: 85px 0; }
 .accordion-header.active { background-color: var(--primary-color); color: #ffffff; }
 .arrow-icon { transition: transform 0.3s; font-size: 0.9rem; }
 .accordion-header.active .arrow-icon { transform: rotate(180deg); }
-.accordion-content { padding: 25px; display: none; background-color: rgba(248, 250, 252, 0.6); border-top: 1px solid var(--border-color); animate: fadeIn 0.4s ease; }
+.accordion-content { padding: 25px; display: none; background-color: rgba(248, 250, 252, 0.6); border-top: 1px solid var(--border-color); animation: fadeIn 0.4s ease; }
 [data-theme="dark"] .accordion-content { background-color: rgba(15, 23, 42, 0.15); }
 .time-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
 .time-table td { padding: 12px 5px; border-bottom: 1px solid var(--border-color); font-size: 0.92rem; }
@@ -128,31 +131,72 @@ html[lang="en"] .time-value { text-align: right; }
 .sub-map-btn { padding: 8px 14px; font-size: 0.8rem; background-color: var(--google-blue); }
 .sub-map-btn:hover { box-shadow: 0 5px 15px rgba(66, 133, 244, 0.2); }
 
-/* --- 📱 تصميم شبكة أرقام التواصل الموسعة بالكامل 📱 --- */
+/* --- تصميم شبكة أرقام التواصل --- */
 .contact-grid-full { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
 .contact-box { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 22px; box-shadow: var(--shadow); transition: var(--transition); border-top: 4px solid var(--secondary-color); }
 .contact-box:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
 .contact-box.highlight-box { border-top-color: var(--primary-color); background: linear-gradient(to bottom, rgba(213, 47, 47, 0.01), transparent); }
 .box-head { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.98rem; margin-bottom: 15px; color: var(--text-color); }
 .box-head i { font-size: 1.2rem; color: var(--primary-color); }
-.contact-box.highlight-box .box-head i { color: var(--primary-color); }
 .box-body { display: flex; flex-direction: column; gap: 8px; }
-.phone-item { font-size: 1.05rem; font-weight: 700; color: var(--secondary-color); text-decoration: none; display: inline-block; transition: var(--transition); width: fit-content; dir: ltr !important; text-align: right; }
+.phone-item { font-size: 1.05rem; font-weight: 700; color: var(--secondary-color); text-decoration: none; display: inline-block; transition: var(--transition); width: fit-content; text-align: right; }
 .phone-item:hover { color: var(--primary-color); transform: translateX(-3px); }
 html[lang="en"] .phone-item:hover { transform: translateX(3px); }
 
-/* قنوات التواصل والشبكات الاجتماعية */
+/* شبكات التواصل الاجتماعي */
 .social-container { display: flex; justify-content: center; gap: 16px; margin-top: 45px; flex-wrap: wrap; }
 .social-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.35rem; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: var(--transition); text-decoration: none; }
-.social-icon:hover { transform: translateY(-5px) scale(1.08); animation: pulseSocial 1s infinite alternate; }
+.social-icon:hover { transform: translateY(-5px) scale(1.08); }
 .social-icon.whatsapp { background-color: #25D366; }
 .social-icon.tiktok { background-color: #000000; }
 [data-theme="dark"] .social-icon.tiktok { background-color: #f1f5f9; color: #000000; }
 .social-icon.instagram { background-color: #E1306C; }
 .social-icon.snapchat { background-color: #FFFC00; color: #000000; box-shadow: 0 5px 15px rgba(255, 252, 0, 0.2); }
 .social-icon.x-twitter { background-color: #14171A; }
+/* --- تنسيق رابط حقوق المطور الكامل وحل مشكلة عدم الضغط --- */
+.developer-credits {
+    position: relative; /* تفعيل إمكانية التحكم في ترتيب الطبقات */
+    z-index: 10;        /* رفعه في أعلى طبقة لكي لا يغطيه أي عنصر آخر بالإنجليزية */
+    font-size: 0.92rem;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 6px 16px;
+    background-color: var(--bg-color);
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
 
-/* --- التذييل وحقوق م.أحمد العطاس البرمجية --- */
+.developer-credits a {
+    color: var(--text-color); 
+    text-decoration: none;    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+}
+
+/* تأثير التمرير (Hover) ليعطي المستخدم شعوراً بأنه قابل للضغط */
+.developer-credits a:hover {
+    opacity: 0.85;
+    cursor: pointer; /* إظهار علامة اليد عند تمرير الماوس */
+}
+
+/* الألوان الثابتة للأيقونة والاسم الهندسي */
+.developer-credits a i {
+    color: var(--primary-color) !important;
+}
+
+.developer-credits a .dev-name {
+    color: var(--secondary-color) !important;
+    font-weight: 700;
+}
+/* --- التذييل وحقوق التطوير --- */
 footer { background-color: var(--surface-color); border-top: 1px solid var(--border-color); padding: 30px 0; transition: var(--transition); }
 .footer-content-wrapper { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 #footer-text { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; }
@@ -164,12 +208,15 @@ footer { background-color: var(--surface-color); border-top: 1px solid var(--bor
 .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease-out, transform 0.65s ease-out; }
 .animate-on-scroll.appear { opacity: 1; transform: translateY(0); }
 
-/* تجاوب التصميم مع الشاشات */
+/* استعلامات الوسائط (Media Queries) */
 @media (max-width: 992px) {
-    .nav-links { display: none; }
+    .nav-links { display: none !important; } /* يضمن إخفاء الشريط في الشاشات الصغيرة لتظهر قائمة الهامبرغر */
     .menu-toggle-btn { display: block; }
-    .nav-container { padding: 12px 0; }
     .hero h2 { font-size: 2rem; }
-    .hero p { font-size: 1.05rem; }
-    section { padding: 60px 0; }
+    .hero p { font-size: 1rem; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }

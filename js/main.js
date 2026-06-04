@@ -150,7 +150,7 @@ const dictionary = {
         lblNzJuice: "فرع النزلة (قسم العصيرات)", lblNzSweet: "فرع النزلة (قسم الحلويات)", lblNzHardware: "فرع النزلة (قسم الخردوات)",
         lblBrNakhil: "فرع حي النخيل", lblBrStars: "فرع دوار النجوم",
         footerText: "جميع الحقوق محفوظة © ٢٠٢٦ لدى شركة وصالة الرفادة العربية التجارية.",
-        devCredits: "<i class='fa-solid fa-code'></i> تصميم وتطوير هندسي ذكي بواسطة: <span class='dev-name'>م. أحمد العطاس</span>"
+       devCredits: "<a href='https://5a3.github.io/Profile/' target='_blank'><i class='fa-solid fa-code'></i> تصميم وتطوير: <span class='dev-name'>م. أحمد العطاس</span></a>"
     },
     en: {
         pageTitle: "Al-Rafadh Arabic Trading Company | Corporate",
@@ -175,7 +175,7 @@ const dictionary = {
         lblNzJuice: "Al-Nazlah (Juices Section)", lblNzSweet: "Al-Nazlah (Sweets Section)", lblNzHardware: "Al-Nazlah (Hardware Section)",
         lblBrNakhil: "Al-Nakhil District Branch", lblBrStars: "Dwar Al-Nojoom Branch",
         footerText: "All Rights Reserved © 2026 Al-Rafadh Arabic Trading Company.",
-        devCredits: "<i class='fa-solid fa-code'></i> Engineered & Developed By: <span class='dev-name'>Eng. Ahmed Al-Attas</span>"
+      devCredits: "<a href='https://5a3.github.io/Profile/' target='_blank'><i class='fa-solid fa-code'></i> Engineered & Developed By: <span class='dev-name'>Eng. Ahmed Al-Attas</span></a>"
     }
 };
 
@@ -192,7 +192,6 @@ function toggleLanguage() {
     document.getElementById('nav-subtitle').textContent = dictionary[newLang].navSubtitle;
     document.getElementById('lang-text').textContent = dictionary[newLang].langText;
     
-    // مصفوفة الروابط المصححة والمطابقة تماماً لـ الـ HTML لشاشات الكمبيوتر والجوال
     const desktopLinks = ['link-home', 'link-features', 'link-traffic', 'link-branches', 'link-contact'];
     desktopLinks.forEach(id => {
         const key = id.replace('link-', 'link');
@@ -267,7 +266,6 @@ const handleScrollAnimation = () => {
     });
 };
 
-// تشغيل التهيئة والأنيميشن فور تحميل الصفحة
 document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
