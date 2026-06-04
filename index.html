@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">شركة صالة الرفادة العربية التجارية | Al-Rafadh Company</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar animate__animated animate__fadeInDown">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="assets/images/logo.jpg" alt="Al-Rafadh Logo" class="nav-logo">
+                <div class="logo-text">
+                    <h1 id="nav-title">شركة صالة الرفادة العربية</h1>
+                    <p id="nav-subtitle">المواد الغذائية جملة وقطاعي</p>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn-action" id="theme-toggle" onclick="toggleTheme()" title="تبديل المظهر">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="btn-action lang-btn" id="lang-toggle" onclick="toggleLanguage()">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="lang-text">English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge-1970 animate__animated animate__zoomIn" id="hero-badge">منذ ١٩٧٠م</span>
+            <h2 class="animate__animated animate__fadeInUp animate__delay-1s" id="hero-title">صالة الرفادة العربية التجارية</h2>
+            <p class="animate__animated animate__fadeInUp animate__delay-2s" id="hero-desc">متخصصون في بيع وتلبية احتياجاتكم من المواد الغذائية بأسعار منافسة وجودة عالية لعملائنا في قطاعي الجملة والتجزئة منذ أكثر من خمسين عاماً.</p>
+        </div>
+    </header>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title" id="title-features">تميزنا وخدماتنا</h2>
+            <div class="grid-layout">
+                <div class="card animate-on-scroll">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
+                    <h3 id="feat-1-title">أسعار منافسة</h3>
+                    <p id="feat-1-desc">نلتزم بتقديم أفضل الأسعار المنافسة في السوق لتناسب ميزانيات المستهلكين والتجار.</p>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-store"></i></div>
+                    <h3 id="feat-2-title">جملة وقطاعي</h3>
+                    <p id="feat-2-desc">نوفر خيارات البيع بالتجزئة للمستهلك النهائي، بالإضافة إلى كميات الجملة الكبيرة للمؤسسات.</p>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3 id="feat-3-title">أقسام متنوعة</h3>
+                    <p id="feat-3-desc">من المواد الغذائية الأساسية، العصيرات، المجمدات والحلويات، وصولاً إلى أدوات البلاستيك والخردوات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="branches-section">
+        <div class="container">
+            <h2 class="section-title" id="title-branches">فروعنا ومواعيد العمل</h2>
+            <div class="branches-wrapper">
+                
+                <div class="accordion-item animate-on-scroll">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span id="br-1-title"><i class="fa-solid fa-location-dot"></i> فرع صالة حي النخيل (جدة)</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <table class="time-table">
+                            <tr>
+                                <td id="t-sat-thu">من السبت للخميس</td>
+                                <td class="time-value" dir="ltr">06:30 AM - 02:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td id="t-fri">يوم الجمعة</td>
+                                <td class="time-value" dir="ltr">01:00 PM - 02:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td id="t-wholesale"><i class="fa-solid fa-circle-dot"></i> قسم الجملة (النخيل)</td>
+                                <td class="time-value" dir="ltr">06:00 AM - 02:40 PM <br> 04:00 PM - 08:45 PM</td>
+                            </tr>
+                        </table>
+                        <a href="https://maps.google.com/?q=صالة+الرفادة+العربية+حي+النخيل+جدة" target="_blank" class="btn-map" id="btn-map-1">
+                            <i class="fa-solid fa-map-location-dot"></i> موقع الفرع على الخريطة
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span id="br-2-title"><i class="fa-solid fa-location-dot"></i> سوبرماركت فرع حي النزلة اليمانية</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <table class="time-table">
+                            <tr>
+                                <td id="t-nz-wholesale"><i class="fa-solid fa-circle-dot"></i> قسم الجملة (السبت - الخميس)</td>
+                                <td class="time-value" dir="ltr">06:00 AM - 12:15 PM <br> 04:15 PM - 09:45 PM</td>
+                            </tr>
+                            <tr>
+                                <td id="t-nz-retail"><i class="fa-solid fa-circle-dot"></i> قسم القطاعي (السبت - الخميس)</td>
+                                <td class="time-value" dir="ltr">06:00 AM - 03:30 PM <br> 04:15 PM - 11:30 PM</td>
+                            </tr>
+                        </table>
+                        <a href="https://maps.google.com/?q=صالة+الرفادة+حي+النزلة+اليمانية+جدة" target="_blank" class="btn-map" id="btn-map-2">
+                            <i class="fa-solid fa-map-location-dot"></i> موقع الفرع على الخريطة
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span id="br-3-title"><i class="fa-solid fa-cubes"></i> الفروع المتخصصة الأخرى</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <table class="time-table">
+                            <tr>
+                                <td><strong id="br-sub-1">فرع دوار النجوم للجملة</strong></td>
+                                <td class="time-value">جدة - جيل عروض الخصم المفتوح</td>
+                            </tr>
+                            <tr>
+                                <td><strong id="br-sub-2">فرع الرفادة للخردوات والبلاستيك</strong></td>
+                                <td class="time-value">قسم متكامل للمستلزمات المنزلية والاستهلاكية</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title" id="title-contact">اتصل بنا وقنوات العروض</h2>
+            <p class="section-subtitle" id="contact-subtitle">يسعدنا تواصلكم معنا مباشرة عبر الأرقام الرسمية أو متابعة آخر عروض الخصم المتجددة</p>
+            
+            <div class="grid-layout contact-cards">
+                <div class="contact-card animate-on-scroll">
+                    <i class="fa-solid fa-headset card-icon"></i>
+                    <h4 id="c-service">خدمة العملاء الموحدة</h4>
+                    <p class="phone-link" dir="ltr">+966 55 116 0958</p>
+                </div>
+                <div class="contact-card animate-on-scroll">
+                    <i class="fa-solid fa-envelope card-icon"></i>
+                    <h4 id="c-email">البريد الإلكتروني الرسمي</h4>
+                    <p class="email-link">alrafadacompany@gmail.com</p>
+                </div>
+                <div class="contact-card animate-on-scroll">
+                    <i class="fa-solid fa-phone card-icon"></i>
+                    <h4 id="c-branch-call">أرقام الفروع المباشرة</h4>
+                    <p id="c-branch-desc">فرع النخيل: 0503071044 <br> فرع النزلة: 0501818742</p>
+                </div>
+            </div>
+
+            <div class="social-container animate-on-scroll">
+                <a href="https://whatsapp.com/channel/0029Vb69DDmF6smsSm0IZo0A" target="_blank" class="social-icon whatsapp" title="قناة عروض الواتساب">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/al_rafadh" target="_blank" class="social-icon instagram" title="إنستغرام">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/@alrafadhcompany" target="_blank" class="social-icon snapchat" title="سناب شات">
+                    <i class="fa-brands fa-snapchat"></i>
+                </a>
+                <a href="https://x.com/rafada1980" target="_blank" class="social-icon x-twitter" title="منصة إكس">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p id="footer-text">جميع الحقوق محفوظة © ٢٠٢٦ لشركة صالة الرفادة العربية التجارية.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
